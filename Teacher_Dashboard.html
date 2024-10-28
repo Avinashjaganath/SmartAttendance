@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="teacherdashboard.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <div class="menu-item" data-target="Teacher_Detail">
+                <img src="teacher.jpg" alt="teacher" class="profile-img">
+                <div class="profile-info">
+                    <p id="nametransfer" class="profile-name">Teacher</p>
+                    <p id="emailtransfer" class="profile-email">teacher@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-item" data-target="dashboard"><a href="#">Dashboard</a></li>
+                <li class="menu-item" data-target="Class"><a href="#">Class</a></li>
+                <li class="menu-item" data-target="Student_List" id="studentsMenu"><a href="#">Students</a>
+                <li class="menu-item" data-target="Add_Student"><a href="#">Add Student</a></li>
+                <li class="menu-item" data-target="Edit_Student"><a href="#">Edit Student Details</a></li>
+                <li class="menu-item" data-target="Attendence"><a href="#">Attendence</a></li>
+                <li class="menu-item" onclick="logout()"><a href="index.html">Logout</a></li>
+                </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header class="header">
+            <h1>Teacher Dashboard!</h1>
+        </header>
+        <nav>
+            <div class="breadcrumb" id="breadcrumb">
+                <p class="breadcr" data-target="dashboard"><a href="#">Home</a></p>
+                <p id="pagede"></p>
+            </ul>
+            </div>
+            
+        </nav>
+        
+        <section id="dashboard" class="content-section active">
+            <h2>Dashboard</h2>
+            <div  class="report-cards">
+                <div data-target="Class" class="report-card">
+                    <div class="report-icon"><img src="./class-icon.jpg" alt="class"></div>
+                    <div class="report-info">
+                        <p>Total Class</p>
+                        <a href="#">View Classes</a>
+                    </div>
+                </div>
+                
+                <div data-target="Student_List" class="report-card">
+                    <div class="report-icon"><img src="./parent.png" alt="Students"></div>
+                    <div class="report-info">
+                        <p>Total Students</p>
+                        <a href="#">View Students</a>
+                    </div>
+                </div>
+        </section>
+
+        <section id="Class" class="content-section">
+            <h2>Class</h2>
+            
+        </section>
+        
+        <section id="Student_List" class="content-section">
+            <h2>Student List</h2>
+            <div id="studentview"></div>
+        </section>
+
+        <section id="setails" class="content-section">
+            <h2>Student List</h2>
+            <div id="studentdetail">
+                <table id="details">
+                    <thead>
+                        <th>Name</th>
+                        <th>Register no</th>
+                        <th>Class</th>
+                    </thead>
+                </table>
+            </div>
+        </section>
+        <section id="Add_Student" class="content-section">
+               
+        </section>
+        
+       
+    
+        <section id="add" class="content-section">
+            <div id="add-form" class="formc">
+                <form id="addStudentform">
+                    <h2>Add Student</h2>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Name" id="addname" />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Register Number" id="addreg"required />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Subject Name" id="addsub" required />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Section" id="addsection" required />
+                    </div>  
+                    <div class="input_box">
+                        <input type="submit" value="Add Student">
+                    </div> 
+                </form>
+            </div>
+            
+        </section>
+
+        <section id="Edit_Student" class="content-section">
+
+            <div class="forma">
+            <!-- Edit Student Details content -->
+            <form id="editstudentforma">
+                <h2>Edit Student Details</h2>
+                <div class="addStudentform">
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Register Number" onchange="update()" id="editreg" required />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Name" id="editname" required/>
+                        
+                    </div>
+                    
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Class Name" id="editclass" required />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Section" id="editsection" required />
+                    </div>  
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Subject Name" id="editsubject">
+                    </div>
+                    <div class="input_box">
+                        <input type="submit" value="Edit Student">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="customAlert" class="custom-alert">
+            <span class="close-btn" onclick="closeAlert('customAlert')">*</span>
+            <p>Edited Student details Successfully!</p>
+            <button class="closebutton" onclick="closeAlert('customAlert')">OK</button>
+        </div>
+        </section>
+
+        <section id="Attendence" class="content-section">
+            <h2>Attendence</h2>
+            <div id="attend">
+
+            </div>
+        </section>
+        <section id="atted" class="content-section">
+            <h2>Mark Attendence</h2>
+            <form id="attendence_from">
+                <table id="datend">
+                    <thead>
+                        <th>Name</th>
+                        <th>Register No</th>
+                        <th>Class</th>
+                        <th>Attendence</th>
+                    </thead>
+                </table>
+                <button id="marked">Submit</button>
+            </form>
+        </section>
+    </div>
+    <script src="teacherdash.js"></script>
+</body>
+</html>

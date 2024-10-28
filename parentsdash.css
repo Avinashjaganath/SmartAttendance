@@ -1,0 +1,415 @@
+.contact-btn {
+    background-image: linear-gradient(to bottom right , #5A6DD8, #A020F0);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.profile-card{
+    margin-top: 10%;
+}
+.content{
+    margin-top: 10%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+div{
+    border-radius: 30px;
+}
+.input_box{
+  position: absolute;
+  top: 20%;
+  font-size: 20px;
+  color: #707070;
+}
+
+body {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-image: linear-gradient(to top left , #5A6DD8, #A020F0);
+    color: #ecf0f1;
+    height: 100vh;
+    position: fixed;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.profile-email {
+    font-size: 14px;
+}
+
+.menu,.submenu {
+    margin-top: 20px;
+}
+
+.menu-item {
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.menu-item a ,.submenu-item a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #34495e;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+.profile-summary {
+    display: flex;
+    align-items: center;
+}
+
+.profile-summary-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.content-section {
+    margin-top: 20px;
+}
+
+.content-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.report-cards {
+    display:inline-flex ;
+    width: 100%;
+
+    justify-content: space-between;
+}
+
+.report-card {
+    background-color: #ecf0f1;
+    width: 50%;
+    padding: 20px;
+    display: inline-flex;
+    align-items: right;
+    margin-left: 20px ;
+}
+#Student div{
+    position:absolute   ;
+    padding-top: 20px;
+    padding-left: 20px;
+    margin-top: 10%;
+    margin-left: 20%;
+    width: 500px;
+    background-image: linear-gradient(to top left , #5A6DD8, #A020F0);
+    height: 200px;
+    color: whitesmoke;
+}
+.label{
+    
+    margin-left: 10%;
+    margin-top: 35%;
+    
+}
+.det{
+    margin-right: 30%;
+    text-align: end;
+    position: relative;
+}
+.report-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+/* Add your custom styles here */
+.report {
+    margin-bottom: 20px;
+  }
+  .report h2 {
+    margin-bottom: 10px;
+  }
+  .report ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .report li {
+    margin-bottom: 5px;
+  }
+  
+.report-icon img{
+    height: 60px;
+    width: 60px;
+    margin-top: -6px;
+    margin-left: 5%;
+    border-radius: 50%;
+}
+
+/* General styling for the todayatt table */
+#todayatt table,#todayatt table {
+    border-collapse: collapse;
+    margin: 5% 17.5%;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 20px;
+}
+#todayatt {
+    margin-top: 20px;
+    text-align: center;
+    
+}
+/* Styling for the table headers */
+#todayatt table th, #todayatt table td ,#todayatt table th,#todayatt table td{
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+/* Styling for the table header */
+#todayatt thead th ,#todayatt thead th{
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for the table rows */
+#todayatt tbod  y tr:nth-child(even),#todayatt tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Styling for the table rows on hover */
+#todayatt tbody tr:hover,#todayatt tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for the table cells */
+#todayatt tbody td ,#todayatt tbody td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Optional: Styling for a more responsive table */
+#todayatt table ,#todayatt table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.formc ,.forma{
+    align-items: center;
+    margin-left: 17.5%;
+    width: 60%;
+    text-align: center;
+        
+}
+
+.report-info p {
+    margin: 5px 0;
+}
+
+.report-info a {
+    color: #8e44ad;
+    text-decoration: none;
+}
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.submenu.show {
+    display: block;
+}
+/* Add your existing CSS code */
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image : linear-gradient(to bottom right , #5A6DD8, #A020F0);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+    height: 20%;
+    width: 30%;
+  }
+.custom-alert p{
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 5%;
+    text-align: center  ;
+}
+  
+  .close-btn {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    size: 70px;
+    cursor: pointer;
+  }
+  
+  .closebutton {
+    padding: 10px 20px;
+    border: 2px solid #251d1d;
+    cursor: pointer;
+    margin: 5% 40%;
+    border-radius: 40% ;
+  }
+  .closebutton:active {
+    transform: scale(0.98);
+  }
+
+  .breadcrumb {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    width: 100%;
+    display: inline-flex;
+}
+.breadcrumb p{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 10px;
+}
+/* General styling for the todayatt table */
+#studentdetail .table ,#atted .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    overflow-x:visible;
+}
+
+/* Styling for the table headers and cells */
+#studentdetail th, #studentdetail td,#atted td,#atted th{
+    padding: 12px 15px;
+    border: 1px  solid #ddd;
+    width: 300px; /* Each column takes 33.33% of the table's width for 3 columns */
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Styling for the table header */
+#studentdetail thead th, #atted thead th{
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for the table rows on hover */
+#studentdetail tbody tr:hover , #atted tbody tr:hover{
+    background-color: #f1f1f1;
+}
+
+/* Styling for the table cells */
+#studentdetail tbody td,#atted  tbody td {
+    border-bottom: 1px solid #ddd;
+}
+.button:hover{
+    background-image : linear-gradient(to right , #A020F0, #5A6DD8);
+    animation-delay: 1s;
+    cursor: pointer;
+}
+#marked{
+    margin-top: 5%;
+    background-color: #5A6DD8;
+    width: 150px;
+    margin-left: 40%;
+    height: 30px;
+    border-radius: 20px;
+}
+.button {
+    background-image : linear-gradient(to bottom right , #5A6DD8, #A020F0);
+    font-size:medium;
+    color: white;
+    border-radius: 50px;
+    padding: 4px 20px;
+}
+#btn{
+    margin-left: 45%;
+}
+
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #todayatt * {
+        visibility: visible;
+    }
+    #todayatt {
+        position: absolute;
+        left: 0;
+        top: 50px;
+    }
+    #classpri,#regnopri{
+        top: 65px;
+        bottom: 3px;
+    }
+    #classpri{
+        left: 75px;
+    }
+    #regnopri{
+        left: 50px;
+    }
+    #btn {
+        visibility: hidden;
+    }
+}

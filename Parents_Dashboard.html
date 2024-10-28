@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <title>Parents</title>
+    <link rel="stylesheet" href="parentsdash.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <div class="menu-item" data-target="parent">
+                <img src="parent.png" alt="teacher" class="profile-img">
+                <div class="profile-info">
+                    <p id="nametransfer" class="profile-name">Parent</p>
+                    <p id="emailtransfer" class="profile-email">Parents@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-item" data-target="dashboard"><a href="#">Dashboard</a></li>
+                <li class="menu-item" data-target="Student"><a href="#">Student</a></li>
+                <li class="menu-item" data-target="Today"><a href="#">Attendence </a></li>
+                <li class="menu-item" onclick="logout()"><a href="index.html">Logout</a></li>
+                </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header class="header">
+            <h1>Parents Dashboard!</h1>
+        </header>
+        <section id="dashboard" class="content-section active">
+            <h2>Dashboard</h2>
+            <div  class="report-cards">
+                <div data-target="Student" class="report-card">
+                    <div class="report-icon"><img src="./class-icon.jpg" alt="class"></div>
+                    <div class="report-info">
+                        <p>Student Details</p>
+                        <a href="#">View Details</a>
+                    </div>
+                </div>
+                
+                <div data-target="Attendence" class="report-card">
+                    <div class="report-icon"><img src="./class-icon.jpg" alt="class"></div>
+                    <div class="report-info">
+                        <p>Attendence</p>
+                        <a href="#">View Attendence</a>
+                    </div>
+                </div>                
+            </div>
+        </section>
+
+        <section id="Student" class="content-section" >
+            <h2>Student Details</h2>
+            <div>
+                <label for="Name" class="label" >Name</label>
+                <h3 id="stname" class="det"></h3>
+                <label for="Name" class="label">Class</label>
+                <h3 id="stclass" class="det"></h3>
+                <label for="Name" class="label">Register No</label>
+                <h3 id="stregno" class="det"></h3>
+                <label for="Name" class="label">Section</label>
+                <h3 id="stsec" class="det"></h3>
+            </div> 
+        </section>
+
+        <section id="Today" class="content-section">
+            <h2>Today's Attendence</h2>
+            <form id="gettoday"  style="margin-left:30%;border-radius: 20px;margin-top: 0.4%; font-size: 15px;">
+                <input type="date" id="date" >
+                <input type="submit" class="button" value="Get Details">
+            </form>
+            <div id="todayat">
+            </div>
+            <div id="todayatt">
+                <h1  id="title" style="text-align: center; margin-top: 4%;">Attendence</h1>
+                <h2 style="padding-left:60%;position:absolute;" id="classpri"></h2><h2 style="padding-left: 5%; position:absolute;" id="regnopri"></h2>
+                
+                <table id="todayclass" style="display: none;">
+                    <thead>
+                        <th>Class</th>
+                        <th>time</th>
+                        <th>date</th>
+                        <th>Attendence</td>
+                    </thead>
+                </table>
+
+                <input type="button" class="button" id="btn" value="Generate Pdf" onclick="pdf()" style="display: none;" >
+            </div>
+        </section>
+        <script src="paarenstdash.js"></script>
+</body>
+</html>

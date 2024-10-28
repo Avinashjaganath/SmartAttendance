@@ -1,0 +1,390 @@
+.contact-btn {
+    background-image: linear-gradient(to bottom right , #5A6DD8, #A020F0);
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.profile-card{
+    margin-top: 10%;
+}
+.content{
+    margin-top: 10%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.det{
+    size: 300px;
+    margin-right: 30%;
+}
+
+div{
+    border-radius: 30px;
+}
+
+body {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background-image: linear-gradient(to top left , #5A6DD8, #A020F0);
+    color: #ecf0f1;
+    height: 100vh;
+    position: fixed;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.profile-email {
+    font-size: 14px;
+}
+
+.menu,.submenu {
+    margin-top: 20px;
+}
+
+.menu-item {
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+.menu-item a ,.submenu-item a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu-item:hover, .menu-item.active {
+    background-color: #34495e;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3%;
+}
+
+.header h1 {
+    font-size: 24px;
+}
+
+.profile-summary {
+    display: flex;
+    align-items: center;
+}
+
+.profile-summary-img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.content-section {
+    margin-top: 20px;
+}
+
+.content-section h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.report-cards {
+    display:inline-flex ;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.report-card {
+    background-color: #ecf0f1;
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    align-items: right;
+}
+.input_box {
+    position: relative;
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+  }
+  .input_box input {
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 0 30px;
+    color: #333;
+    transition: all 0.2s ease;
+    border-bottom: 1.5px solid #aaaaaa;
+  }
+  .input_box input:focus {
+    border-color: linear-gradient(to bottom right , #5A6DD8, #A020F0);
+  }
+  .input_box i {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+  }
+  .input_box i.email,
+  .input_box i.password{
+    left: 0;
+  }
+  .input_box input:focus ~ i.email,
+  .input_box input:focus ~ i.password,
+  .input_box input:focus ~ i.text {
+    color: linear-gradient(to bottom right , #5A6DD8, #A020F0);
+  }
+  .input_box i.pw_hide {
+    right: 0;
+    font-size: 18px;
+    cursor: pointer;
+  }
+.report-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+/* Add your custom styles here */
+.report {
+    margin-bottom: 20px;
+  }
+  .report h2 {
+    margin-bottom: 10px;
+  }
+  .report ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .report li {
+    margin-bottom: 5px;
+  }
+  
+.report-icon img{
+    height: 60px;
+    width: 60px;
+    margin-top: -6px;
+    margin-left: 5%;
+    border-radius: 50%;
+}
+
+/* General styling for the results table */
+#results table,#Student_List table {
+    border-collapse: collapse;
+    margin: 10% 17.5%;
+    font-size: 18px;
+    text-align: center;
+    border-radius: 20px;
+}
+#results ,#Student_List{
+    margin-top: 20px;
+    align-items: center;
+}
+/* Styling for the table headers */
+#results table th, #results table td ,#Student_List table th,#Student_List table td{
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    width: 100%;
+}
+
+/* Styling for the table header */
+#results thead th ,#Student_List thead th{
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for the table rows */
+#results tbody tr:nth-child(even),#Student_List tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Styling for the table rows on hover */
+#results tbody tr:hover,#Student_List tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Styling for the table cells */
+#results tbody td ,#Student_List tbody td {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Optional: Styling for a more responsive table */
+#results table ,#Student_List table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.formc ,.forma{
+    align-items: center;
+    margin-left: 17.5%;
+    width: 60%;
+    text-align: center;
+        
+}
+
+.report-info p {
+    margin: 5px 0;
+}
+
+.report-info a {
+    color: #8e44ad;
+    text-decoration: none;
+}
+.submenu {
+    display: none;
+    padding-left: 20px;
+}
+
+.submenu.show {
+    display: block;
+}
+/* Add your existing CSS code */
+
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.custom-alert {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-image : linear-gradient(to bottom right , #5A6DD8, #A020F0);
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.1);
+    height: 20%;
+    width: 30%;
+  }
+.custom-alert p{
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 5%;
+    text-align: center  ;
+}
+  
+  .close-btn {
+    position: absolute;
+    top: 7px;
+    right: 15px;
+    size: 70px;
+    cursor: pointer;
+  }
+  
+  .closebutton {
+    padding: 10px 20px;
+    border: 2px solid #251d1d;
+    cursor: pointer;
+    margin: 5% 40%;
+    border-radius: 40% ;
+  }
+  .closebutton:active {
+    transform: scale(0.98);
+  }
+
+  .breadcrumb {
+    margin-top: 3%;
+    margin-bottom: 4%;
+    width: 100%;
+    display: inline-flex;
+}
+.breadcrumb p{
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-right: 10px;
+}
+/* General styling for the results table */
+#studentdetail .table ,#atted .table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    overflow-x:visible;
+}
+
+/* Styling for the table headers and cells */
+#studentdetail th, #studentdetail td,#atted td,#atted th{
+    padding: 12px 15px;
+    border: 1px  solid #ddd;
+    width: 300px; /* Each column takes 33.33% of the table's width for 3 columns */
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* Styling for the table header */
+#studentdetail thead th, #atted thead th{
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Styling for the table rows on hover */
+#studentdetail tbody tr:hover , #atted tbody tr:hover{
+    background-color: #f1f1f1;
+}
+
+/* Styling for the table cells */
+#studentdetail tbody td,#atted  tbody td {
+    border-bottom: 1px solid #ddd;
+}
+.check :hover{
+    color: green;
+}
+#marked{
+    margin-top: 5%;
+    background-image:linear-gradient(to left , #A020F0 , pink) ;
+    width: 150px;
+    margin-left: 40%;
+    height: 30px;
+    border-radius: 20px;
+}

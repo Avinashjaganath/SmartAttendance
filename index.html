@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Attendence</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Unicons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+      (function() {
+          emailjs.init("kHlpzHpqevQDsdHIW"); // Replace with your EmailJS user ID
+      })();
+  </script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <!-- Include any other Firebase modules you need (e.g., firebase-auth.js for authentication) -->
+   
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <a href="#about" onclick="touch()" class="nav_logo">Smart Attendence</a>
+
+        <!--Navigation item-->
+        <ul class="nav_items">
+          <li class="nav_item">
+            <a href="#about" class="nav_link" onclick="touch()">About</a>
+          </li>
+        </ul>
+
+        <button class="button" id="form-open">Login</button>
+      </nav>
+    </header>
+
+    <!-- Home -->
+    <section class="home">
+      <div class="form_container">
+        <i class="uil uil-times form_close"></i>
+        <!-- Login From -->
+        <div class="form login_form">
+          <form id="LoginForm">
+            <h2 id="loginpe">Login</h2>
+
+            <div>
+              <input type="image" name="login_person" id="a" onclick="final('Admin List')" src="admin.jpg" alt="Admin">
+              <input type="image" name="login_person" id="P" onclick="final('Parents List')" src="parent.png" alt="Parents" >
+              <input type="image" name="login_person" id="T" onclick="final('Teachers List')" src="teacher.jpg" alt="Teachers" >
+            </div>
+            <div class="input_box">
+              <input type="email" placeholder="Enter your email" id="login_email" required />
+              <i class="uil uil-envelope-alt email"></i>
+            </div>
+            <div class="input_box">
+              <input type="password" minlength="10" placeholder="Enter your password" id="login_password" required />
+              <i class="uil uil-lock password"></i>
+              <i class="uil uil-eye-slash pw_hide"></i>
+            </div>
+            <div class="input_box" id="unique">
+              <i class="uil-panorama-v"></i>
+              <input type="text" id="secrt" minlength="12" placeholder="Admin Unique Code" >
+            </div>
+
+              <button class="button" type="submit">Login Now</button>
+              <center><p id="loginStatus"></p></center>
+            <div class="login_signup">Don't have an account? <a href="#" id="signup">Signup</a></div>
+          </form>
+        </div>
+
+        <!-- Signup From -->
+        <div class="form signup_form">
+          <form id="registerForm">
+            <h2 id="regi">Admin Sign Up</h2>
+            
+            <div>
+              <input type="image" name="login_person" id="a" onclick="final('Admin List')" src="admin.jpg" alt="Admin" >
+              <input type="image" name="login_person" id="P" onclick="final('Parents List')"src="parent.png" alt="Parents" >
+            </div>
+            <div class="input_box">
+              <i class="uil uil-coronavirus"></i>
+              <input type="text" placeholder="Enter Name" id="name" />
+            </div>
+            <div class="input_box">
+              <i class="uil uil-envelope-alt email"></i>
+              <input type="email" placeholder="Enter your email" id="email"required />
+            </div>
+            <div class="input_box">
+              <i class="uil uil-eye-slash pw_hide"></i>
+              <input type="password" minlength="10" placeholder="Create password" id="password" required />
+              <i class="uil uil-lock password"></i>
+            </div>
+            <div class="input_box">
+              <i class="uil uil-eye-slash pw_hide"></i>
+              <input type="password" minlength="10" placeholder="Confirm password" id="confirm" required />
+              <i class="uil uil-lock password"></i> 
+            </div>  
+            <div class="input_box" id="college" >
+              <i class="uil uil-ninja"></i>
+              <input type="text" placeholder="Enter College/School Name " id="college-in" >
+            </div>
+            <div class="input_box" id="p-regno" style="display: none;" >
+              <i class="uil-times"></i>
+              <input type="text" placeholder="Enter your son/daughter Register no" id="p-regno-in">
+            </div>
+            <div class="input_box" id="p-phone" style="display: none;">
+              <i class='uil-envelope-alt'></i>
+              <input type="text" placeholder="Enter your Mobile no" id="p-phone-no">
+            </div>
+
+            <button class="button" type="submit">Signup Now</button>
+
+            <div class="login_signup">Already have an account? <a href="#" id="login">Login</a></div>
+          </form>
+        </div>
+      </div>
+      <div id="about" style="display: none;">
+        <h2>About Our Project</h2>
+        <p>The Smart Attendance Web application, is designed primarily for managing students data, such as marking attendance, tracking students academic activities, and analyzing students data.
+          It provides a user-friendly environment and user-friendly user interface. Users like teachers, administrator and parents can easily track their students. <br><br>
+         </p>
+      </div>
+    </section>    
+
+    <script src="script.js"></script>
+    
+  </body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="admindash.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile">
+            <div class="menu-item" data-target="Admin_Detail">
+                <img src="teacher.jpg" alt="teacher" class="profile-img">
+                <div class="profile-info">
+                    <p id="nametransfer" class="profile-name">Admin</p>
+                    <p id="emailtransfer" class="profile-email">admin@gmail.com</p>
+                </div>
+            </div>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li class="menu-item" data-target="dashboard"><a href="#">Dashboard</a></li>
+                <li class="menu-item" data-target="Class"><a href="#">Class</a></li>
+                <li class="menu-item" data-target="Teacher"><a href="#">Teachers</a></li>
+                <li class="menu-item" data-target="add"><a href="#">Add teacher</a></li>
+                <li class="menu-item" data-target="Add_Student"><a href="#">Add Student</a></li>
+                <li class="menu-item" data-target="Edit_Teacher"><a href="#">Edit Teacher Details</a></li>
+                <li class="menu-item" data-target="Remove_Teacher"><a href="#">Remove Teacher</a></li>
+                <li class="menu-item" onclick="logout()"><a href="index.html">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <header class="header">
+            <h1>Admin Welcome Dashboard!</h1>
+        </header>
+        
+        <section id="dashboard" class="content-section active">
+            <h2>Dashboard</h2>
+            <div  class="report-cards">
+                <div data-target="Class" class="report-card">
+                    <div class="report-icon"><img src="./admin.jpg" alt="class"></div>
+                    <div class="report-info">
+                        <p>Total Class</p>
+                        <a href="#">View Classes</a>
+                    </div>
+                </div>
+                
+                <div data-target="Teacher" class="report-card">
+                    <div class="report-icon"><img src="./parent.png" alt="Students"></div>
+                    <div class="report-info">
+                        <p>Total Teacher</p>
+                        <a href="#">View Teacher</a>
+                    </div>
+                </div>
+        </section>
+
+        <section id="Class" class="content-section">
+            <h2>Class</h2>
+        </section>
+        <section id="setails" class="content-section">
+            <h2>Student List</h2>
+            <div id="studentdetail">
+                <table id="details">
+                    <thead>
+                        <th>Name</th>
+                        <th>Register no</th>
+                        <th>Class</th>
+                    </thead>
+                    <tbody>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="subject" class="content-section">
+            <h1>Subject</h1>
+            <table id='teachersub'>
+                <thead>
+                    <td>Subject </td>
+                    <td>Class</td>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </section>
+        
+        <section id="Teacher" class="content-section">
+            <h2>Teacher List</h2>
+           
+        </section>
+
+        <section id="Edit_Teacher" class="content-section">
+            <!-- Edit Student Details content -->
+            <div class="forma">
+            <form id="forma">
+                <h2>Edit Teacher Details</h2>
+                <div class="editteacherform">
+                    <div class="input_box">
+                        <input type="text" onclick="check('editname')" placeholder="Enter Email id" id="editmail" required />
+                    </div>
+
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Name" id="editname" />
+                    </div>
+                    
+                    <div class="input_box">
+                        <input type="submit" value="Edit Teacher Details">
+                    </div>
+                </div>
+                <div id="customAlert1" class="custom-alert">
+                    <span class="close-btn" onclick="closeAlert('customAlert1')">&times;</span>
+                    <p>Added Student Successfully!</p>
+                    <button class="closebutton" onclick="closeAlert('customAlert1')">OK</button>
+                </div>
+            </form>
+            </div>
+        </section>
+
+        <section id="Remove_Teacher" class="content-section">
+            <div class="remove">
+            <form id="remove">
+                <h2>Remove Teacher Details</h2>
+                <div class="removeteacher">
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Email id" id="removemail" onchange="check('removename')" required />
+                    </div>
+
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Name" id="removename" />
+                    </div>
+                    
+                    <div class="input_box">
+                        <input type="submit" value="Delete Teacher">
+                    </div>
+                </div>
+            </form>
+            </div>
+        </section>
+        <section id="add" class="content-section">
+            <div id="add-form" class="formc">
+                <form id="addteacher">
+                    <h2>Add Teacher</h2>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Name" id="addname" />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Email" id="email"required />
+                    </div>
+                    <div class="input_box">
+                        <input type="password" placeholder="Enter password" id="password" required />
+                    </div>
+                    <div class="input_box">
+                        <input type="tel" placeholder="Enter Moblie Number" id="num" required />
+                    </div>  
+                    <div class="input_box">
+                        <input type="submit" value="Add Teacher">
+                    </div> 
+                </form>
+            </div>
+            
+        </section>
+        <section id="Add_Student" class="content-section">
+               
+        </section>
+        <section id="addst" class="content-section">
+            <div id="add-form" class="formc">
+                <form id="addStudentform">
+                    <h2>Add Student</h2>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Name" id="addname" />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Register Number" id="addreg"required />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Subject Name" id="addsub" required />
+                    </div>
+                    <div class="input_box">
+                        <input type="text" placeholder="Enter Section" id="addsection" required />
+                    </div>  
+                    <div class="input_box">
+                        <input type="submit" value="Add Student">
+                    </div> 
+                </form>
+            </div>
+            
+        </section>
+        
+    </div>
+    <script src="admindash.js"></script>
+</body>
+</html>
